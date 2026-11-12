@@ -1,0 +1,68 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dashboard__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.dashboard__channel {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dashboard__meta {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 400px);
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.dashboard__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.dashboard__aside {
+  position: sticky;
+  top: var(--space-4);
+  min-width: 0;
+}
+
+/* Keep a long evidence list scrollable inside the viewport on desktop. */
+.dashboard__aside .evidence {
+  max-height: calc(100vh - 2 * var(--space-4));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 1180px) {
+  .dashboard__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dashboard__aside {
+    position: static;
+  }
+  .dashboard__aside .evidence {
+    max-height: none;
+    overflow: visible;
+  }
+}
