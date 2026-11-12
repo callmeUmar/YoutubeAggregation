@@ -1,0 +1,94 @@
+.app-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
+.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.brand__mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.brand__name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.brand__tagline {
+  margin-top: 2px;
+  max-width: 70ch;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+.mode-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--demo-border);
+  background: var(--demo-bg);
+  color: var(--demo-text);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.mode-pill__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-10);
+}
+
+.app-main:focus {
+  outline: none;
+}
+
+.app-footer {
+  padding-bottom: var(--space-8);
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .app-header__inner {
+    flex-wrap: wrap;
+  }
+  .brand__tagline {
+    font-size: 13px;
+  }
+  .app-main {
+    padding-top: var(--space-4);
+  }
+}

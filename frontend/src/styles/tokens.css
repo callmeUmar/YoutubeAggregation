@@ -1,0 +1,140 @@
+/*
+ * Design tokens. Components reference roles, never raw hex, so light and dark
+ * values swap in one place.
+ *
+ * Chart colors were run through a colorblind/contrast validator:
+ *  - Period A/B (blue/orange) pass every check in both modes.
+ *  - Praise/criticism sit in the CVD "floor" band, so they are never shown
+ *    without a text label, and the gray neutral segment always separates them.
+ */
+:root {
+  color-scheme: light;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Surfaces */
+  --page: #f6f6f4;
+  --surface: #ffffff;
+  --surface-sunken: #f1f1ee;
+  --surface-hover: #f4f4f1;
+  --border: rgba(11, 11, 11, 0.1);
+  --border-strong: rgba(11, 11, 11, 0.2);
+
+  /* Ink (all >= 4.5:1 on --surface) */
+  --text-primary: #111110;
+  --text-secondary: #4b4a47;
+  --text-muted: #67665f;
+  --text-on-accent: #ffffff;
+
+  /* Interactive */
+  --accent: #256abf;
+  --accent-hover: #1c5cab;
+  --accent-text: #1c5cab;
+  --accent-soft: #e8f1fc;
+  --focus-ring: #2a78d6;
+
+  /* Chart chrome */
+  --grid: #e7e6e0;
+  --axis: #c3c2b7;
+
+  /* Identity: comparison periods */
+  --period-a: #2a78d6;
+  --period-b: #eb6834;
+
+  /* Polarity: sentiment (marks) */
+  --praise: #1baf7a;
+  --neutral: #a3a29b;
+  --criticism: #e34948;
+
+  /* Sentiment as text/badges (>= 4.5:1) */
+  --praise-text: #0b6b47;
+  --praise-soft: #e3f5ee;
+  --neutral-text: #4b4a47;
+  --neutral-soft: #efefec;
+  --criticism-text: #b02525;
+  --criticism-soft: #fcebeb;
+
+  /* Status */
+  --good-text: #006300;
+  --bad-text: #b02525;
+  --warning-text: #8a5300;
+  --warning-soft: #fff4dc;
+  --warning-border: #f0c46b;
+  --danger-soft: #fdeeee;
+  --danger-border: #f1b3b3;
+
+  /* Demo banner */
+  --demo-bg: #fff4dc;
+  --demo-border: #f0c46b;
+  --demo-text: #5c3a00;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-card: 0 1px 2px rgba(11, 11, 11, 0.04), 0 1px 1px rgba(11, 11, 11, 0.02);
+  --shadow-pop: 0 8px 24px rgba(11, 11, 11, 0.12);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --surface-sunken: #141413;
+    --surface-hover: #232321;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.2);
+
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #a3a29b;
+
+    /* Darker than --period-a so white button text stays >= 4.5:1. */
+    --accent: #2f74d0;
+    --accent-hover: #2a68bb;
+    --accent-text: #86b6ef;
+    --accent-soft: #17283d;
+    --focus-ring: #6da7ec;
+
+    --grid: #2c2c2a;
+    --axis: #45443f;
+
+    --period-a: #3987e5;
+    --period-b: #d95926;
+
+    --praise: #199e70;
+    --neutral: #6e6d67;
+    --criticism: #e66767;
+
+    --praise-text: #5fd3a6;
+    --praise-soft: #12291f;
+    --neutral-text: #c3c2b7;
+    --neutral-soft: #262624;
+    --criticism-text: #f29a9a;
+    --criticism-soft: #321717;
+
+    --good-text: #3fc23f;
+    --bad-text: #f29a9a;
+    --warning-text: #f5c86a;
+    --warning-soft: #2b2210;
+    --warning-border: #6b5016;
+    --danger-soft: #2a1515;
+    --danger-border: #6b2a2a;
+
+    --demo-bg: #2b2210;
+    --demo-border: #6b5016;
+    --demo-text: #f5d58f;
+
+    --shadow-card: none;
+    --shadow-pop: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+}
